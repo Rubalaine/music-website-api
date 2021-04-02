@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "artistas",
+  "info": {
+    "name": "artista",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "biografia": {
+      "type": "richtext"
+    },
+    "projectos": {
+      "via": "artista",
+      "collection": "projecto"
+    }
+  }
+}

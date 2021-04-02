@@ -1,0 +1,79 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projectos",
+  "info": {
+    "name": "projecto",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "categoria": {
+      "type": "enumeration",
+      "enum": [
+        "musica",
+        "album",
+        "ep",
+        "mixtape",
+        "outro",
+        "video"
+      ],
+      "default": "musica",
+      "required": true
+    },
+    "cover": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "participantes": {
+      "collection": "artista"
+    },
+    "generos": {
+      "collection": "genero"
+    },
+    "descricao": {
+      "type": "text"
+    },
+    "formato": {
+      "type": "enumeration",
+      "enum": [
+        "mp3",
+        "mp4",
+        "wav"
+      ]
+    },
+    "tamanho": {
+      "type": "decimal"
+    },
+    "lancamento": {
+      "type": "date"
+    },
+    "tags": {
+      "type": "string"
+    },
+    "artista": {
+      "model": "artista",
+      "via": "projectos"
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "destaque": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
