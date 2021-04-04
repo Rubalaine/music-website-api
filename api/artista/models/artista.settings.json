@@ -20,8 +20,17 @@
       "type": "richtext"
     },
     "projectos": {
-      "via": "artista",
-      "collection": "projecto"
+      "collection": "projecto",
+      "via": "artista"
+    },
+    "cover": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }
